@@ -12,9 +12,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: yarn
-    - run: yarn test --ci --coverage .
-    - name: Upload Coverage
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+
+    - name: Prepare Environment
+      run:  |
+        apt install mecab libmecab-dev mecab-ipadic-utf8 swig python3-pip
+        pip3 install -r requirements.txt
+
+    - name: Create WordCloud
+      run: python ./get_gitlab_discussion.py
+
+
