@@ -19,7 +19,7 @@ prepare:
 
 pages:
   stage: deploy
-  image: alpine:latest
+  image: node:latest
   script:
   - yarn
   - yarn build
