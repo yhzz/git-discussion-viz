@@ -10,11 +10,11 @@ body_str = ''
 for node in r.json():
   body_str += node['body']
 
-print(body_str)
+# print(body_str)
 
 tagger = MeCab.Tagger()
 tagger.parse('')
-node = tagger.parseToNode(r.text)
+node = tagger.parseToNode(body_str)
 
 word_list = []
 while node:
