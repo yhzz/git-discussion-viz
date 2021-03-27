@@ -2,9 +2,8 @@ import requests
 import MeCab
 from wordcloud import WordCloud 
 import sys
-2  print (sys.argv［0］)
 
-url = sys.argv［0
+url = sys.argv[0]
 body_str = ''
 
 for i in range(10):
