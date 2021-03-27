@@ -12,7 +12,7 @@ for node in r.json():
 
 # print(body_str)
 
-mecab = MeCab.Tagger ()
+tagger = MeCab.Tagger ()
 tagger.parse('')
 node = tagger.parseToNode(body_str)
 
