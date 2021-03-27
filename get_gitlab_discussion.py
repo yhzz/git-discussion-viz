@@ -5,7 +5,7 @@ from wordcloud import WordCloud
 url = "https://api.github.com/repos/hashicorp/terraform/issues/comments?per_page=100&page="
 body_str = ''
 
-for i in range(10):
+for i in range(20):
     r = requests.get(url+str(i))
     for node in r.json():
         body_str += node['body']
