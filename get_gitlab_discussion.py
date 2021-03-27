@@ -6,7 +6,7 @@ url = "https://api.github.com/repos/hashicorp/terraform/issues/comments?per_page
 body_str = ''
 
 for i in range(50):
-  r = requests.get(url+i)
+  r = requests.get(url+str(i))
   for node in r.json():
     body_str += node['body']
 
