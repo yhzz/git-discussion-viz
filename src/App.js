@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={wordcloud}/>
+        <img src={wordcloud} alt="wordcloud"/>
         <p>
           Terraform Repository Issue comment wordcloud
         </p>
