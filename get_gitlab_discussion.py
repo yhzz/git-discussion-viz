@@ -2,15 +2,13 @@ import requests
 import MeCab
 from wordcloud import WordCloud
 
-url = "https://api.github.com/repos/hashicorp/terraform/issues/comments?per_page=100&page=2"
-
-r = requests.get(url)
-
+url = "https://api.github.com/repos/hashicorp/terraform/issues/comments?per_page=100&page="
 body_str = ''
-for node in r.json():
-  body_str += node['body']
 
-# print(body_str)
+for i in range(50):
+  r = requests.get(url+i)
+  for node in r.json():
+    body_str += node['body']
 
 tagger = MeCab.Tagger()
 tagger.parse('')
