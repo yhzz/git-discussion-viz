@@ -5,12 +5,11 @@ from wordcloud import WordCloud
 url = "https://api.github.com/repos/hashicorp/terraform/issues/comments?per_page=100&page="
 body_str = ''
 
-for i in range(50):
+for i in range(1):
     r = requests.get(url+str(i))
     for node in r.json():
         body_str += node['body']
 
-print(body_str)
 
 tagger = MeCab.Tagger()
 tagger.parse('')
