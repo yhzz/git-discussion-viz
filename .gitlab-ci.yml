@@ -11,7 +11,7 @@ prepare:
   - apt-get install -y mecab mecab-ipadic-utf8 libmecab-dev swig fonts-ipaexfont python3-pip
   - cp /etc/mecabrc /usr/local/etc/
   - pip3 install -r requirements.txt
-  - python ./get_gitlab_discussion.py 'https://api.github.com/repos/hashicorp/terraform/issues/comments?per_page=100&page='
+  - python3 ./get_gitlab_discussion.py 'https://api.github.com/repos/hashicorp/terraform/issues/comments?per_page=100&page='
   - mv wordcloud.png src/
   artifacts:
     paths:
