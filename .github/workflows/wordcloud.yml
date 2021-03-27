@@ -35,7 +35,7 @@ jobs:
         
     - name: Yarn
       run:  |
-        mv wordcloud.png public/
+        mv wordcloud.png src/
         yarn
         yarn build
 
