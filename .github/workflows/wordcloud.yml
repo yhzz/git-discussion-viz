@@ -15,7 +15,12 @@ jobs:
 
     - name: Prepare Environment
       run:  |
-        sudo apt-get install -y mecab libmecab-dev mecab-ipadic-utf8 swig python3-pip
+        sudo apt-get install -y mecab libmecab-dev mecab-ipadic-utf8 
+        git clone https://github.com/neologd/mecab-ipadic-neologd.git
+        cd mecab-ipadic-neologd
+        sudo bin/install-mecab-ipadic-neologd
+        dicdir = /usr/lib/x86_64-linux-gnu/mecab/dic/mecab-ipadic-neologd
+        sudo apt-get install -y swig python3-pip
         pip3 install -r requirements.txt
 
     - name: Create WordCloud
