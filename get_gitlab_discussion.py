@@ -3,14 +3,13 @@ import MeCab
 from wordcloud import WordCloud 
 import sys
 
-url = sys.argv[0]
+url = sys.argv[1]
 body_str = ''
 
 for i in range(10):
     r = requests.get(url+str(i))
     for node in r.json():
         body_str += node['body']
-
 
 tagger = MeCab.Tagger()
 tagger.parse('')
