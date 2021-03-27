@@ -1,8 +1,10 @@
 import requests
 import MeCab
-from wordcloud import WordCloud
+from wordcloud import WordCloud 
+import sys
+2  print (sys.argv［0］)
 
-url = "https://api.github.com/repos/hashicorp/terraform/issues/comments?per_page=100&page="
+url = sys.argv［0
 body_str = ''
 
 for i in range(10):

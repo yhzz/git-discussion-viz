@@ -20,7 +20,7 @@ jobs:
         pip3 install -r requirements.txt
 
     - name: Create WordCloud
-      run: python ./get_gitlab_discussion.py
+      run: python ./get_gitlab_discussion.py 'https://api.github.com/repos/hashicorp/terraform/issues/comments?per_page=100&page='
 
     - name: upload WordCloud
       uses: actions/upload-artifact@v2

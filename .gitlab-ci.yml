@@ -1,0 +1,27 @@
+
+stages:
+  - prepare
+  - deploy
+
+prepare:
+  stage: prepare
+  image:  ubuntu:latest
+  script:
+  - sudo apt-get install -y mecab mecab-ipadic-utf8 libmecab-dev swig fonts-ipaexfont python3-pip
+  - sudo cp /etc/mecabrc /usr/local/etc/
+  - pip3 install -r requirements.txt
+  - python ./get_gitlab_discussion.py 'https://api.github.com/repos/hashicorp/terraform/issues/comments?per_page=100&page='
+  - mv wordcloud.png src/
+  artifacts:
+    paths:
+    - src
+
+pages:
+  stage: deploy
+  image: alpine:latest
+  script:
+  - yarn
+  - yarn build
+  artifacts:
+    paths:
+    - build
