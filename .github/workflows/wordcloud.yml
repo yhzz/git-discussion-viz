@@ -15,7 +15,7 @@ jobs:
 
     - name: Prepare Environment
       run:  |
-        sudo apt-get install -y mecab mecab-ipadic-utf8 libmecab-dev swig python3-pip
+        sudo apt-get install -y mecab mecab-ipadic-utf8 libmecab-dev swig fonts-ipaexfont python3-pip
         sudo cp /etc/mecabrc /usr/local/etc/
         pip3 install -r requirements.txt
 
