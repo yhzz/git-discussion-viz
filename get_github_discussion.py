@@ -3,11 +3,12 @@ import MeCab
 from wordcloud import WordCloud
 import sys
 
-url = sys.argv[1]
+repo = sys.argv[1]
 body_str = ''
 
 for i in range(10):
-    r = requests.get(url+str(i))
+    r = requests.get('https://api.github.com/repos/'+repo +
+                     '/issues/comments?per_page=100&page='+str(i))
     for node in r.json():
         body_str += node['body']
 
