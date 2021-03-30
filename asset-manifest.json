@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/git-discussion-viz/static/css/main.9d5b29c0.chunk.css",
-    "main.js": "/git-discussion-viz/static/js/main.2c999848.chunk.js",
-    "main.js.map": "/git-discussion-viz/static/js/main.2c999848.chunk.js.map",
+    "main.js": "/git-discussion-viz/static/js/main.15f62dcc.chunk.js",
+    "main.js.map": "/git-discussion-viz/static/js/main.15f62dcc.chunk.js.map",
     "runtime-main.js": "/git-discussion-viz/static/js/runtime-main.4065156c.js",
     "runtime-main.js.map": "/git-discussion-viz/static/js/runtime-main.4065156c.js.map",
     "static/js/2.5d719155.chunk.js": "/git-discussion-viz/static/js/2.5d719155.chunk.js",
@@ -12,12 +12,12 @@
     "index.html": "/git-discussion-viz/index.html",
     "static/css/main.9d5b29c0.chunk.css.map": "/git-discussion-viz/static/css/main.9d5b29c0.chunk.css.map",
     "static/js/2.5d719155.chunk.js.LICENSE.txt": "/git-discussion-viz/static/js/2.5d719155.chunk.js.LICENSE.txt",
-    "static/media/wordcloud.e05d09c8.png": "/git-discussion-viz/static/media/wordcloud.e05d09c8.png"
+    "static/media/wordcloud.b7a71104.png": "/git-discussion-viz/static/media/wordcloud.b7a71104.png"
   },
   "entrypoints": [
     "static/js/runtime-main.4065156c.js",
     "static/js/2.5d719155.chunk.js",
     "static/css/main.9d5b29c0.chunk.css",
-    "static/js/main.2c999848.chunk.js"
+    "static/js/main.15f62dcc.chunk.js"
   ]
 }
