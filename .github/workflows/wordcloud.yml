@@ -1,0 +1,46 @@
+name: create comment wordcloud on github actions
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Prepare Environment
+      run:  |
+        sudo apt-get install -y mecab mecab-ipadic-utf8 libmecab-dev swig fonts-ipaexfont python3-pip
+        sudo cp /etc/mecabrc /usr/local/etc/
+        pip3 install -r requirements.txt
+
+    - name: Create WordCloud
+      run: python ./get_github_discussion.py 'hashicorp/terraform'
+
+    - name: upload WordCloud
+      uses: actions/upload-artifact@v2
+      with:
+        name: WordCloud
+        path: wordcloud.png
+
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '15.x'
+        
+    - name: Yarn
+      run:  |
+        mv wordcloud.png src/
+        yarn
+        yarn build
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build
